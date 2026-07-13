@@ -1,0 +1,8 @@
+streamlit
+groq
+python-dotenv
+pdfplumber
+pandas
+numpy
+scikit-learn
+joblib
