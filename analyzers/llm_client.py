@@ -8,6 +8,20 @@ load_dotenv()
 
 class LLMClient:
 
+    """
+    LLMClient = "A wrapper class that handles communication between my application and the Groq LLM API."
+
+    It loads the API key and model configuration from environment variables using python-dotenv, 
+    validates that the API key exists, 
+    and initializes the Groq client. 
+    Its generate() method accepts a prompt, 
+    sends it to the configured LLM using the chat-completion API, 
+    with a low temperature of 0.2 for consistent output, and returns the generated text. 
+    I separated this functionality from the individual analyzers so that Resume Analyzer, 
+    Skill Gap Analyzer and other LLM-based components can reuse the same API communication layer."
+
+    """
+
     def __init__(self):
 
         self.api_key = os.getenv("GROQ_API_KEY")

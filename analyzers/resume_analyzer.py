@@ -7,6 +7,10 @@ from analyzers.llm_client import LLMClient
 class ResumeAnalyzer:
     """
     Uses Groq to analyze a resume and return structured JSON.
+
+    ResumeAnalyzer takes extracted resume text, 
+    sends it to the Groq LLM using a predefined prompt, 
+    and converts the LLM's response into structured JSON for downstream processing.
     """
 
     def __init__(self):

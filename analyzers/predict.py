@@ -7,6 +7,13 @@ class PlacementPredictor:
     """
     Loads the trained ML model and predicts
     placement readiness.
+
+    Load the saved model and scaler, 
+    prepare new candidate features in the correct format, 
+    make a prediction, 
+    calculate prediction probabilities and confidence, 
+    and return a structured result.
+    
     """
 
     def __init__(self):

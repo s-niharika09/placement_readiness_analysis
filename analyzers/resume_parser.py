@@ -5,6 +5,12 @@ import pdfplumber
 class ResumeParser:
     """
     Extracts plain text from a resume PDF.
+
+    The Resume Parser extracts readable text from the uploaded resume PDF.
+    Used the pdfplumber library to open the PDF, 
+    read each page, extract the text, 
+    and combine the extracted content into a single string. 
+    This text is then passed to the Resume Analyzer for further analysis.”
     """
 
     def __init__(self):

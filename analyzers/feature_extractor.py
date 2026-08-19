@@ -8,6 +8,15 @@ class FeatureExtractor:
     """
     Uses Groq to extract numerical ML features
     from the Resume and Job Description.
+    FeatureExtractor is responsible for extracting structured information from the unstructured resume and job description. 
+    It uses an LLM client connected to Groq. 
+    First, it loads an external prompt template using pathlib. 
+    It then replaces the resume and job-description placeholders with the actual input text and sends the completed prompt to the LLM. 
+    Since the LLM returns text, It cleans possible Markdown JSON code fences 
+    and use json.loads() to convert the response into a Python dictionary. 
+    It also handle JSON decoding errors so that invalid LLM responses can be identified and debugged. 
+    The resulting structured information can then be used by the feature-building and ml."
+    
     """
 
     def __init__(self):

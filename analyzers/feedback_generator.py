@@ -5,6 +5,10 @@ from analyzers.llm_client import LLMClient
 
 
 class FeedbackGenerator:
+    """
+    
+
+    """
 
     def __init__(self):
 

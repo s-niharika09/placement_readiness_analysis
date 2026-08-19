@@ -2,7 +2,17 @@ class FeatureBuilder:
 
     def __init__(self):
         pass
-
+    """
+    FeatureBuilder is responsible for feature engineering in placement readiness analyzer.
+    It takes three inputs: job-description analysis, skill-gap analysis, and resume analysis. 
+    From the JD analysis, It extracts required and critical skills. 
+    From the skill-gap analysis, It extracts matched, missing, and critical missing skills. 
+    Then calculates skill-match percentage and critical-skill-match percentage, along with missing-skill counts. 
+    From the resume analysis, It obtain project, certification, internship, resume completeness, keyword-match, and role-category scores. 
+    Finally, combines these values into a structured dictionary containing numerical features. 
+    These features are then used as inputs to machine-learning model to predict the candidate's placement-readiness category
+    
+    """
     def build_features(
         self,
         jd_analysis,

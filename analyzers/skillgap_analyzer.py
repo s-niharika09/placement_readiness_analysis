@@ -8,6 +8,12 @@ class SkillGapAnalyzer:
     """
     Uses Groq to compare the analyzed Resume and
     Job Description and identify the candidate's skill gap.
+    "SkillGapAnalyzer compares the structured resume analysis with the structured job-description analysis 
+    to identify the candidate's skill gaps. It loads an external prompt, 
+    replaces the resume and JD placeholders with JSON-formatted data, 
+    and sends the completed prompt to Groq through my LLMClient. 
+    The response is cleaned to remove Markdown code fences and then parsed using json.loads() into a Python dictionary. 
+    Implemented error handling for invalid JSON responses and included a standalone testing section."
     """
 
     def __init__(self):

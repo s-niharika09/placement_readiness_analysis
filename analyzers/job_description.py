@@ -8,6 +8,15 @@ class JobDescriptionAnalyzer:
     """
     Uses Groq to analyze a Job Description
     and extract structured information.
+    The job_description.py module is responsible for analyzing a job description 
+    and converting unstructured job-description text into structured information. 
+    created a JobDescriptionAnalyzer class that uses an LLMClient to communicate with the Groq API. 
+    The prompt is stored separately in a text file, which is loaded using Python's Path class. 
+    The actual job description is inserted into the prompt and sent to the LLM. 
+    Since the LLM returns JSON, It cleans any Markdown code fences and use json.loads() 
+    to convert the response into a Python dictionary. 
+    Also added exception handling to catch invalid JSON responses.
+    
     """
 
     def __init__(self):
