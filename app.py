@@ -4,6 +4,7 @@ import json
 import io
 import pandas as pd
 import streamlit as st
+import re
 
 # Optional: Import reportlab for PDF generation
 try:
@@ -315,11 +316,13 @@ if st.session_state.get("analysis_complete", False):
     seven_day = feedback.get("improvement_plan", {}).get("7_day_plan", [])
     if seven_day:
         for day, task in enumerate(seven_day, start=1):
-            st.markdown(f"**Day {day}:** {task}")
+            clean_task = re.sub(
+                r"^(Day\s*\d+[:\s-]*)+", "", task, flags=re.IGNORECASE
+            ).strip()
+            st.markdown(f"**Day {day}:** {clean_task}")
     else:
         st.info("No 7-day plan generated.")
-
-    st.divider()
+    st.divider()                
 
     # ==========================================================
     # Technical Details (Hidden by Default)
